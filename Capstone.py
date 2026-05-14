@@ -62,8 +62,13 @@ if display == "Daily":
         st.plotly_chart(fig, use_container_width=True)
 
 else:
-    # Data is already cumulative — no cumsum needed
+    # concatenate the country/region with the date/column 
     data = pd.concat([filtered["Country/Region"].reset_index(drop=True), filtered[date_cols]], axis=1)
+    # only last column for the cumulative table 
+    last_col = data.columns[-1]
+    summary = data[["Country/Region", last_col]].rename(columns={last_col: f"Total {data_type} as of {last_col}"})
+    st.markdown("## Latest data")
+    st.write(summary)
 
     if len(country) > 0:
         chart_data = data.melt(id_vars="Country/Region", var_name="Date", value_name="Cumulative Count")
@@ -83,6 +88,8 @@ else:
 
 
 st.write(data)
+
+    # code wAAI CLAUDE
 
     # charts wWAI CLAUDE
     # rest of code wAAI CLAUDE
