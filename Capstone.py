@@ -80,7 +80,7 @@ else:
             y="Cumulative Count",
             color="Country/Region",
             title=f"Cumulative {data_type} Over Time",
-            labels={"Date": "Year", "Cumulative Count": f"Cumulative {data_type} (Millions)"}
+            labels={"Date": "Year", "Cumulative Count": f"Cumulative {data_type}"}
         )
         fig.update_xaxes(dtick="M12", tickformat="%Y")
         fig.update_yaxes(tickformat=".2s")
