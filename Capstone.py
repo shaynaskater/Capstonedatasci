@@ -55,7 +55,7 @@ if display == "Daily":
             y="Daily Count",
             color="Country/Region",
             title=f"Daily {data_type} Over Time",
-            labels={"Date": "Date", "Daily Count": f"Daily {data_type} (Millions)"}
+            labels={"Date": "Date", "Daily Count": f"Daily {data_type}"}
         )
         fig.update_xaxes(dtick="M6", tickformat="%b %Y")
         fig.update_yaxes(tickformat=".2s")
