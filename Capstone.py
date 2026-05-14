@@ -82,7 +82,7 @@ else:
             title=f"Cumulative {data_type} Over Time",
             labels={"Date": "Year", "Cumulative Count": f"Cumulative {data_type}"}
         )
-        fig.update_xaxes(dtick="M12", tickformat="%Y")
+        fig.update_xaxes(dtick="M6", tickformat="%b %Y")
         fig.update_yaxes(tickformat=".2s")
         st.plotly_chart(fig, use_container_width=True)
 
